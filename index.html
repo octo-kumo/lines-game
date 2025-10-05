@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="darkreader-lock" />
+    <title>Lines</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        background-image: url("https://picsum.photos/1920/1080");
+        background-size: cover;
+        background-position: center;
+        mix-blend-mode: multiply;
+      }
+
+      :root {
+        --z-base: 1;
+        --z-sides: 10;
+      }
+
+      .line {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform-origin: center;
+        transition: height 0.2s, filter 0.12s, background 0.12s;
+        background: black;
+        height: 5px;
+        z-index: var(--z-base);
+        pointer-events: auto;
+      }
+
+      .line:hover {
+        height: 20px !important;
+      }
+
+      .side {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: var(--z-sides);
+        transition: backdrop-filter 0.5s ease;
+      }
+
+      .inverted {
+        backdrop-filter: invert(1);
+      }
+    </style>
+  </head>
+  <body>
+    <script src="css.ts"></script>
+  </body>
+</html>
